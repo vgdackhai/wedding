@@ -1,0 +1,39 @@
+.snow-container {
+  @apply fixed top-0 left-0 w-full h-full z-50 pointer-events-none overflow-hidden bg-transparent;
+}
+
+.snowflake {
+  animation-name: fall, shake;
+  animation-duration: 10s, 5s;
+  animation-timing-function: linear, ease-in-out;
+  animation-iteration-count: infinite, infinite;
+  position: fixed;
+  filter: blur(0.5px);
+  color: white;
+}
+
+.snowflake::before {
+  content: "❄";
+}
+
+@keyframes fall {
+  0% {
+    top: -10%;
+  }
+
+  100% {
+    top: 100%;
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: translatex(0);
+  }
+  50% {
+    transform: translatex(50px);
+  }
+  100% {
+    transform: translatex(0);
+  }
+}
