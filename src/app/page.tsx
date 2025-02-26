@@ -31,11 +31,13 @@ export default function Home() {
           type="button"
           className="mt-10 rounded-md bg-transparent px-3.5 py-2.5 text-sm shadow-sm ring-1 ring-inset ring-gray-300 inline-flex"
         >
-          <PaperAirplaneIcon aria-hidden="true" className="-ml-0.5 size-5 mr-1 -rotate-45" />
+          <PaperAirplaneIcon
+            aria-hidden="true"
+            className="-ml-0.5 size-5 mr-1 -rotate-45"
+          />
           <span>Xác nhận tham dự</span>
         </button>
       </div>
-      <Snowflake />
     </div>
   );
 }

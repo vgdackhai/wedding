@@ -12,6 +12,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import "./globals.css";
+import { Snowflake } from "@/components/Snowflake";
 // import homeBackground from "./home.jpg";
 
 const geistSans = Geist({
@@ -164,11 +165,17 @@ export default function RootLayout({
           </section>
 
           <section>
-            <main className="h-[calc(100vh-64px)] relative">
+            <main className="sm:h-[calc(100vh-64px)] relative overflow-hidden">
               <div className="absolute inset-0 z-0">
-                <Image src={"/home.jpg"} alt="home-image" className="object-cover" fill={true} />
+                {/* <Image
+                  src={"/home.jpg"}
+                  alt="home-image"
+                  className="object-cover"
+                  fill={true}
+                /> */}
               </div>
-              <div className="z-10 h-full relative">{children}</div>
+              <Snowflake />
+              <div className="z-10 h-full relative overflow-y-auto">{children}</div>
             </main>
           </section>
         </div>

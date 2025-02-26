@@ -12,10 +12,6 @@
   color: white;
 }
 
-.snowflake::before {
-  content: "❄";
-}
-
 @keyframes fall {
   0% {
     top: -10%;

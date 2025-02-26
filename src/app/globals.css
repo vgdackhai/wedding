@@ -10,6 +10,7 @@
 :root {
   --background: #faf0e6;
   --foreground: #171717;
+  --text: white;
 }
 
 html {

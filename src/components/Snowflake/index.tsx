@@ -14,10 +14,11 @@ export const Snowflake = () => {
     const createSnowflake = () => {
       const snowflake = document.createElement("div");
       snowflake.classList.add(styles["snowflake"]);
+      snowflake.innerHTML = "♥";
       snowflake.style.left = `${Math.random() * 100}vw`; // Random horizontal position
       // snowflake.style.animationDuration = `${Math.random() * 3 + 5}s`; // Random fall speed
       // snowflake.style.animationDelay = `${Math.random() * 5}s`; // Random delay
-      snowflake.style.fontSize = `${Math.random() * 20 + 10}px`; // Random size
+      snowflake.style.fontSize = `${Math.random() * 10 + 10}px`; // Random size
 
       // Append snowflake to the container
       snowContainer?.appendChild(snowflake);
