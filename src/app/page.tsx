@@ -1,5 +1,4 @@
 import { Clock } from "@/components/Clock";
-import { Snowflake } from "@/components/Snowflake";
 import { PaperAirplaneIcon } from "@heroicons/react/24/outline";
 import { Great_Vibes } from "next/font/google";
 

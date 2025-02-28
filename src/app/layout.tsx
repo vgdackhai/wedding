@@ -1,5 +1,6 @@
 "use client";
 
+import { Snowflake } from "@/components/Snowflake";
 import {
   Disclosure,
   DisclosureButton,
@@ -7,12 +8,10 @@ import {
 } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Geist, Geist_Mono } from "next/font/google";
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import "./globals.css";
-import { Snowflake } from "@/components/Snowflake";
 // import homeBackground from "./home.jpg";
 
 const geistSans = Geist({
