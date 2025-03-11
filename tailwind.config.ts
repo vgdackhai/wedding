@@ -1,10 +1,12 @@
 import type { Config } from "tailwindcss";
+const { fontFamily } = require("tailwindcss/defaultTheme");
 
 export default {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./node_modules/@headlessui/react/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
@@ -49,6 +51,9 @@ export default {
         "fade-up": "fade-up 1.5s ease-in",
         "fade-right": "fade-right 1.5s linear",
         "fade-left": "fade-left 1.5s linear",
+      },
+      fontFamily: {
+        "great-vibes": ["Great Vibes", ...fontFamily.sans],
       },
     },
   },

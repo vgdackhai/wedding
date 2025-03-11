@@ -1,5 +1,5 @@
 import { Clock } from "@/components/Clock";
-import { PaperAirplaneIcon } from "@heroicons/react/24/outline";
+import { HeartIcon, PaperAirplaneIcon } from "@heroicons/react/24/outline";
 import { Great_Vibes } from "next/font/google";
 
 const greateVibes = Great_Vibes({
@@ -11,7 +11,7 @@ const greateVibes = Great_Vibes({
 
 export default function Home() {
   return (
-    <div className="text-white h-full">
+    <div className="text-white h-full max-w-5xl mx-auto">
       <div className="flex flex-col justify-center items-center h-full">
         <div
           className={`${greateVibes.variable} text-[96px] relative leading-[1.1]`}
@@ -19,7 +19,9 @@ export default function Home() {
           <span className="absolute -translate-x-full text-nowrap px-4">
             {/* Minh Đức */}
           </span>
-          <span>♥</span>
+          <span>
+            <HeartIcon className="w-16 h-16 text-[#f0394d]" fill="#f0394d" />
+          </span>
           <span className="absolute text-nowrap px-4">{/* Bích Phương */}</span>
         </div>
         <div className="text-2xl tracking-[0.2em] uppercase my-10">

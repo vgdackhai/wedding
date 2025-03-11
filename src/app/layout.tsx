@@ -2,6 +2,8 @@
 
 import { Snowflake } from "@/components/Snowflake";
 import {
+  Dialog,
+  DialogPanel,
   Disclosure,
   DisclosureButton,
   DisclosurePanel,
@@ -58,6 +60,8 @@ export default function RootLayout({
 
   const pathname = usePathname();
 
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   useEffect(() => {
     setNavigation((prev) => {
       return prev.map((item) => {
@@ -69,115 +73,84 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <div className="h-screen">
-          <section>
-            <Disclosure as="nav" className="bg-transparent">
-              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div className="flex h-16 justify-between w-full">
-                  <div className="hidden sm:-my-px sm:ml-6 flex-grow sm:flex sm:space-x-8 justify-between">
-                    {navigation.map((item) => (
-                      <Link
-                        key={item.name}
-                        href={item.href}
-                        aria-current={item.current ? "page" : undefined}
-                        className={classNames(
-                          item.current
-                            ? "border-indigo-500 text-gray-900"
-                            : "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700",
-                          "inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium"
-                        )}
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
-                  </div>
-
-                  <div className="-mr-2 flex items-center sm:hidden">
-                    {/* Mobile menu button */}
-                    <DisclosureButton className="group relative inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
-                      <span className="absolute -inset-0.5" />
-                      <span className="sr-only">Open main menu</span>
-                      <Bars3Icon
-                        aria-hidden="true"
-                        className="block size-6 group-data-[open]:hidden"
-                      />
-                      <XMarkIcon
-                        aria-hidden="true"
-                        className="hidden size-6 group-data-[open]:block"
-                      />
-                    </DisclosureButton>
-                  </div>
-                </div>
+      <body className={`h-screen antialiased`}>
+        <header className="sticky top-0 z-50 flex h-16 border-b border-gray-900/10 bg-[#faf0e6]">
+          <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+            <div className="flex flex-1 items-center gap-x-6">
+              <button
+                type="button"
+                onClick={() => setMobileMenuOpen(true)}
+                className="-m-3 p-3 md:hidden"
+              >
+                <span className="sr-only">Open main menu</span>
+                <Bars3Icon
+                  aria-hidden="true"
+                  className="size-5 text-gray-900"
+                />
+              </button>
+            </div>
+            <nav className="hidden md:flex md:gap-x-11 md:text-sm/6 md:font-semibold md:text-gray-700 h-full">
+              {navigation.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  aria-current={item.current ? "page" : undefined}
+                  className={classNames(
+                    item.current
+                      ? "border-indigo-500 text-gray-900"
+                      : "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700",
+                    "inline-flex items-center border-b-2 px-1 pt-1 text-sm font-medium h-full"
+                  )}
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </nav>
+          </div>
+          <Dialog
+            open={mobileMenuOpen}
+            onClose={setMobileMenuOpen}
+            className="lg:hidden"
+          >
+            <div className="fixed inset-0 z-50" />
+            <DialogPanel className="fixed inset-y-0 left-0 z-50 w-1/2 overflow-y-auto bg-[#faf0e6] px-4 pb-6 sm:max-w-sm sm:px-6 sm:ring-1 sm:ring-gray-900/10">
+              <div className="-ml-0.5 flex h-16 items-center gap-x-6">
+                <button
+                  type="button"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="-m-2.5 p-2.5 text-gray-700"
+                >
+                  <span className="sr-only">Close menu</span>
+                  <XMarkIcon aria-hidden="true" className="size-6" />
+                </button>
               </div>
+              <div className="mt-2 space-y-2">
+                {navigation.map((item) => (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                  >
+                    {item.name}
+                  </a>
+                ))}
+              </div>
+            </DialogPanel>
+          </Dialog>
+        </header>
 
-              <DisclosurePanel className="sm:hidden">
-                <div className="space-y-1 pb-3 pt-2">
-                  {navigation.map((item) => (
-                    <DisclosureButton
-                      key={item.name}
-                      as="a"
-                      href={item.href}
-                      aria-current={item.current ? "page" : undefined}
-                      className={classNames(
-                        item.current
-                          ? "border-indigo-500 bg-indigo-50 text-indigo-700"
-                          : "border-transparent text-gray-600 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-800",
-                        "block border-l-4 py-2 pl-3 pr-4 text-base font-medium"
-                      )}
-                    >
-                      {item.name}
-                    </DisclosureButton>
-                  ))}
-                </div>
-                <div className="border-t border-gray-200 pb-3 pt-4">
-                  <div className="flex items-center px-4">
-                    <div className="shrink-0">
-                      <img
-                        alt=""
-                        src={user.imageUrl}
-                        className="size-10 rounded-full"
-                      />
-                    </div>
-                    <div className="ml-3">
-                      <div className="text-base font-medium text-gray-800">
-                        {user.name}
-                      </div>
-                      <div className="text-sm font-medium text-gray-500">
-                        {user.email}
-                      </div>
-                    </div>
-                    <button
-                      type="button"
-                      className="relative ml-auto shrink-0 rounded-full bg-white p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                    >
-                      <span className="absolute -inset-1.5" />
-                      <span className="sr-only">View notifications</span>
-                      <BellIcon aria-hidden="true" className="size-6" />
-                    </button>
-                  </div>
-                </div>
-              </DisclosurePanel>
-            </Disclosure>
-          </section>
-
-          <section>
-            <main className="sm:h-[calc(100vh-64px)] relative overflow-hidden">
-              <div className="absolute inset-0 z-0">
-                {/* <Image
+        <main className="h-[calc(100vh-64px)] relative overflow-hidden">
+          <div className="absolute inset-0 z-0">
+            {/* <Image
                   src={"/home.jpg"}
                   alt="home-image"
                   className="object-cover"
                   fill={true}
                 /> */}
-              </div>
-              <Snowflake />
-              <div className="z-10 h-full relative overflow-y-auto">{children}</div>
-            </main>
-          </section>
-        </div>
+          </div>
+          <Snowflake />
+          <div className="z-10 h-full relative overflow-y-auto">{children}</div>
+        </main>
       </body>
     </html>
   );
