@@ -6,7 +6,7 @@ import {
 
 export const EventItem = () => {
   return (
-    <div className="min-w-96 w-0 p-8 bg-white text-black space-y-2">
+    <div className="min-w-96 w-0 p-8 bg-white text-black space-y-2 animate-fade-up">
       <div className="relative w-full aspect-square">
         <img src="/home.jpg" className="w-full h-full object-cover" />
       </div>
