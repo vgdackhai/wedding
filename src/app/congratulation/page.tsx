@@ -11,7 +11,7 @@ export default function Congratulations() {
         bankBranch="Chi nhánh nè"
         qr="/home.jpg"
         key={"for-brides"}
-        titleBgColor="#f0394d"
+        titleClassName="bg-[#f0394d]"
         className="animate-fade-right"
       />
       <WalletItem
@@ -22,7 +22,7 @@ export default function Congratulations() {
         bankBranch="Chi nhánh nè"
         qr="/home.jpg"
         key={"for-grooms"}
-        titleBgColor="#07aeab"
+        titleClassName="bg-[#07aeab]"
         className="animate-fade-left"
       />
     </div>

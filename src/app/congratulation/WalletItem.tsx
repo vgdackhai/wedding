@@ -7,8 +7,8 @@ interface Props {
   name: string;
   bankNumber: string;
   bankBranch: string;
-  titleBgColor: string;
   className?: string;
+  titleClassName?: string;
 }
 
 export const WalletItem = ({
@@ -18,15 +18,15 @@ export const WalletItem = ({
   name,
   qr,
   title,
-  titleBgColor,
   className,
+  titleClassName,
 }: Props) => {
   return (
     <div
       className={`relative p-8 bg-white shadow-sm hover:shadow-md ${className}`}
     >
       <div
-        className={`absolute top-0 left-1/2 bg-[${titleBgColor}] -translate-y-1/2 -translate-x-1/2 p-2 px-4 rounded-md uppercase text-lg text-white`}
+        className={`absolute top-0 left-1/2 -translate-y-1/2 -translate-x-1/2 p-2 px-4 rounded-md uppercase text-lg text-white ${titleClassName}`}
       >
         {title}
       </div>
