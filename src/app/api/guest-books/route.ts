@@ -24,9 +24,9 @@ export async function GET() {
     });
 
     return NextResponse.json({ data: response.data.values });
-  } catch (error: any) {
+  } catch (error) {
     console.error("Google Sheets API Error:", error);
-    return NextResponse.json({ error: error.message }, { status: 500 });
+    return NextResponse.json({ error: error }, { status: 500 });
   }
 }
 
@@ -55,9 +55,6 @@ export async function POST(req: Request) {
 
     return NextResponse.json({ message: "Data added successfully" });
   } catch (error) {
-    return NextResponse.json(
-      { error: "Error writing to Google Sheets" },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: error }, { status: 500 });
   }
 }

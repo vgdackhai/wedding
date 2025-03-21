@@ -31,6 +31,7 @@ export const SendMessageForm = ({ fetchData }: Props) => {
       await fetchData();
       setFormData({ name: "", email: "", message: "" });
     } catch (error) {
+      console.log(error);
     } finally {
       setLoading(false);
     }

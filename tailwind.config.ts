@@ -54,6 +54,9 @@ export default {
       },
       fontFamily: {
         "great-vibes": ["Great Vibes", ...fontFamily.sans],
+        coiny: ["Coiny", ...fontFamily.sans],
+        roboto: ["Roboto", ...fontFamily.sans],
+        jura: ["Jura", ...fontFamily.sans],
       },
     },
   },
