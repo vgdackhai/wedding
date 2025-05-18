@@ -1,6 +1,7 @@
 import { Clock } from "@/components/Clock";
 import { HeartIcon, PaperAirplaneIcon } from "@heroicons/react/24/outline";
 import { Great_Vibes } from "next/font/google";
+import Image from "next/image";
 
 const greateVibes = Great_Vibes({
   variable: "--font-great-vibes",
@@ -12,6 +13,11 @@ const greateVibes = Great_Vibes({
 export default function Home() {
   return (
     <div className="text-white h-full max-w-5xl mx-auto">
+      <div className="absolute inset-0 w-full h-full z-[-1] overflow-hidden">
+        <div className="relative w-full h-full animate-right-in">
+          <Image src="/home.jpg" alt="" fill className="object-cover" />
+        </div>
+      </div>
       <div className="flex flex-col justify-center items-center h-full">
         <div
           className={`${greateVibes.variable} text-4xl sm:text-[96px] relative leading-[1.1] inline-flex justify-center items-center font-great-vibes`}

@@ -6,5 +6,5 @@ interface Props {
 }
 
 export default function Layout({ children }: Props) {
-  return <PageWrapper title="Chuyện Tình Yêu">{children}</PageWrapper>;
+  return <PageWrapper title="Chuyện Tình Yêu" bgImg="/pd.jpg">{children}</PageWrapper>;
 }

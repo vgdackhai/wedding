@@ -46,11 +46,22 @@ export default {
             opacity: "1",
           },
         },
+        "right-in": {
+          "0%": {
+            transform: "translateX(50%)",
+            opacity: "0",
+          },
+          "100%": {
+            transform: "translateX(0px)",
+            opacity: "1",
+          },
+        },
       },
       animation: {
         "fade-up": "fade-up 1.5s ease-in",
-        "fade-right": "fade-right 1.5s linear",
-        "fade-left": "fade-left 1.5s linear",
+        "fade-right": "fade-right 1.5s ease-in",
+        "fade-left": "fade-left 1.5s ease-in",
+        "right-in": "right-in 0.5s ease-in",
       },
       fontFamily: {
         "great-vibes": ["Great Vibes", ...fontFamily.sans],
