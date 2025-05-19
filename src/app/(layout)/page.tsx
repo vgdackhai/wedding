@@ -15,7 +15,7 @@ export default function Home() {
     <div className="text-white h-full max-w-5xl mx-auto">
       <div className="absolute inset-0 w-full h-full z-[-1] overflow-hidden">
         <div className="relative w-full h-full animate-right-in">
-          <Image src="/home.jpg" alt="" fill className="object-cover" />
+          <Image src="/cover/home.jpeg" alt="" fill className="object-cover" />
         </div>
       </div>
       <div className="flex flex-col justify-center items-center h-full">
@@ -31,7 +31,7 @@ export default function Home() {
           </span>
           <span className="text-nowrap px-4">Bích Phương</span>
         </div>
-        <div className="text-lg sm:text-2xl tracking-[0.2em] uppercase my-10">
+        <div className="text-lg sm:text-2xl tracking-[0.2em] uppercase my-4">
           We’re getting married
         </div>
         <Clock />
