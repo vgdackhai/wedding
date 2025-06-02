@@ -20,7 +20,7 @@ export const useCounterToWedding = () => {
 
     // Clean up the interval when the component unmounts
     return () => clearInterval(interval);
-  }, []);
+  }, [targetDate]);
 
   function calculateTimeLeft(targetDate: Date) {
     const now = new Date();

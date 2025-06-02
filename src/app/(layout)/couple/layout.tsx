@@ -7,7 +7,7 @@ interface Props {
 
 export default function Layout({ children }: Props) {
   return (
-    <PageWrapper title="Cô Dâu & Chú Rể" bgImg="/home.jpg">
+    <PageWrapper title="Cô Dâu & Chú Rể" bgImg="/cover/couple.jpeg">
       {children}
     </PageWrapper>
   );

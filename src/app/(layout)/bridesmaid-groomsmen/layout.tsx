@@ -6,5 +6,13 @@ interface Props {
 }
 
 export default function Layout({ children }: Props) {
-  return <PageWrapper title="Phù Dâu & Phù Rể">{children}</PageWrapper>;
+  return (
+    <PageWrapper
+      title="Phù Dâu & Phù Rể"
+      bgImg="/cover/phu.jpg"
+      bgPosition="bottom"
+    >
+      {children}
+    </PageWrapper>
+  );
 }

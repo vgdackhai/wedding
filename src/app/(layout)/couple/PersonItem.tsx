@@ -5,11 +5,6 @@ interface Props {
   title: string;
   image: string;
   name: string;
-  childOf: {
-    father: string;
-    mother: string;
-  };
-
   description: string;
   className?: string;
   avatarClassName?: string;
@@ -17,7 +12,6 @@ interface Props {
 
 export const PersonItem = ({
   bgColor,
-  childOf,
   description,
   image,
   name,
@@ -37,18 +31,11 @@ export const PersonItem = ({
           className={`object-cover ${avatarClassName}`}
           fill={true}
           alt="avatar"
+          unoptimized
         />
       </div>
       <div>{name}</div>
-      <div>
-        <div>
-          Con ông: <span>{childOf.father}</span>
-        </div>
-        <div>
-          Con bà: <span>{childOf.mother}</span>
-        </div>
-      </div>
-      <div className="text-center">{description}</div>
+      <div className="text-center text-sm">{description}</div>
     </div>
   );
 };

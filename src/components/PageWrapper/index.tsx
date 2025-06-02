@@ -5,9 +5,15 @@ interface Props {
   title: string;
   children: ReactNode;
   bgImg?: string;
+  bgPosition?: string;
 }
 
-export const PageWrapper = ({ title, children, bgImg }: Props) => {
+export const PageWrapper = ({
+  title,
+  children,
+  bgImg,
+  bgPosition = "center",
+}: Props) => {
   return (
     <div className="max-w-7xl min-h-full mx-auto flex flex-col items-center justify-center p-10">
       {bgImg ? (
@@ -16,7 +22,7 @@ export const PageWrapper = ({ title, children, bgImg }: Props) => {
           style={{
             backgroundImage: `url("${bgImg}")`,
             backgroundSize: "cover",
-            backgroundPosition: "center",
+            backgroundPosition: bgPosition,
           }}
         ></div>
       ) : null}
