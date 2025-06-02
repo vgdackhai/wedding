@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 export const useCounterToWedding = () => {
-  const targetDate = new Date("2025-12-31T23:59:59"); // Target date and time
+  const targetDate = new Date("2025-06-22T00:00:00"); // Target date and time
 
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft(targetDate));
 

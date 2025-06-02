@@ -12,6 +12,7 @@ interface Props {
 
   description: string;
   className?: string;
+  avatarClassName?: string;
 }
 
 export const PersonItem = ({
@@ -22,6 +23,7 @@ export const PersonItem = ({
   name,
   title,
   className,
+  avatarClassName,
 }: Props) => {
   return (
     <div
@@ -30,7 +32,12 @@ export const PersonItem = ({
     >
       <p>{title}</p>
       <div className="w-72 h-72 aspect-square overflow-hidden relative rounded-full">
-        <Image src={image} className="object-cover" fill={true} alt="avatar" />
+        <Image
+          src={image}
+          className={`object-cover ${avatarClassName}`}
+          fill={true}
+          alt="avatar"
+        />
       </div>
       <div>{name}</div>
       <div>

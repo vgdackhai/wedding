@@ -1,7 +1,7 @@
 .clock-wrapper {
-  @apply flex gap-4 text-base sm:text-3xl text-white bg-transparent;
+  @apply flex gap-4 text-base md:text-2xl text-white bg-transparent;
 }
 
 .clock-item {
-  @apply flex flex-col items-center justify-center size-16 sm:size-32 aspect-square border-2 rounded-full border-sky-400;
+  @apply flex flex-col items-center justify-center size-16 md:size-24 aspect-square border-2 rounded-full border-sky-400;
 }
