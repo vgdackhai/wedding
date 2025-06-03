@@ -4,7 +4,7 @@ import Checkbox from "@/components/Checkbox";
 import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
-import { FormEvent, useState } from "react";
+import { useState } from "react";
 
 export default function AcceptJoin() {
   const [loading, setLoading] = useState(false);
