@@ -48,7 +48,7 @@ export default function Checkbox({
         </div>
       </div>
       <div className="text-sm/6">
-        <label htmlFor="comments" className="font-medium text-gray-900">
+        <label htmlFor="comments" className="text-gray-900">
           {label}
         </label>
       </div>

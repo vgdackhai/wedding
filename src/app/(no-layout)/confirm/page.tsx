@@ -109,7 +109,7 @@ export default function AcceptJoin() {
               <div className="pb-1 font-jura">
                 <div className="text-lg text-left">Bạn sẽ tham gia chứ?</div>
               </div>
-              <div className="space-y-6 sm:flex sm:items-center sm:space-x-10 sm:space-y-0">
+              <div className="space-y-2 sm:flex sm:items-center sm:space-x-10 sm:space-y-0">
                 <div className="flex items-center">
                   <input
                     id={"confirm_yes"}
@@ -123,7 +123,7 @@ export default function AcceptJoin() {
                   />
                   <label
                     htmlFor={"confirm_yes"}
-                    className="ml-3 block text-sm/6 font-medium text-gray-900"
+                    className="ml-3 block text-sm/6 text-gray-900"
                   >
                     Có, tôi sẽ tham gia
                   </label>
@@ -141,7 +141,7 @@ export default function AcceptJoin() {
                   />
                   <label
                     htmlFor={"confirm_no"}
-                    className="ml-3 block text-sm/6 font-medium text-gray-900"
+                    className="ml-3 block text-sm/6 text-gray-900"
                   >
                     Xin lỗi, tôi bận mất rồi
                   </label>
@@ -155,7 +155,7 @@ export default function AcceptJoin() {
                   Bạn là khách mời của ai?
                 </div>
               </div>
-              <div className="space-y-6 sm:flex sm:items-center sm:space-x-10 sm:space-y-0">
+              <div className="space-y-2 sm:flex sm:items-center sm:space-x-10 sm:space-y-0">
                 <div className="flex items-center">
                   <Checkbox
                     id="guest_of_bride"
