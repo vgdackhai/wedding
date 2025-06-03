@@ -49,7 +49,7 @@ export default function Story() {
       date: "April 2024",
       image: "/story/t4_2024.jpeg",
       description:
-        "Cô gái thích bay nhảy như em lại một lần nữa rủ được anh đi Đà Lạt – thành phố em yêu vì không khí dịu êm và giấc mơ cổ tích. Chuyến đi này là lần đầu tiên mình cùng nhau thực hiện lời hứa: ghi lại những bức ảnh kỷ niệm ở nơi từng đi qua, để một ngày nào đó, ảnh cưới sẽ là những mảnh ghép thật sống động và ý nghĩa về hành trình yêu của chúng mình.",
+        "Cô gái thích bay nhảy như em lại một lần nữa rủ được anh đi Đà Lạt – thành phố em yêu vì không khí dịu êm và đẹp như giấc mơ cổ tích. Chuyến đi này là lần đầu tiên mình cùng nhau thực hiện lời hứa: ghi lại những bức ảnh kỷ niệm ở nơi từng đi qua, để một ngày nào đó, ảnh cưới sẽ là những mảnh ghép thật sống động và ý nghĩa về hành trình yêu của chúng mình.",
     },
     {
       date: "July 2024",
@@ -66,7 +66,7 @@ export default function Story() {
     {
       date: "Now and Forever",
       image: "/story/now.jpg",
-      description: `Chúng con/em xin chân thành cảm ơn bố mẹ hai bên – những người đã luôn ủng hộ, yêu thương và dõi theo chúng con trong suốt hành trình này. Xin tri ân những người bạn, đồng nghiệp thân yêu – những người đã luôn "đẩy thuyền", ủng hộ và giúp hai đứa can đảm bước lên một con thuyền thật sự, cùng nhau hướng về tương lai.
+      description: `Chúng con xin chân thành cảm ơn bố mẹ hai bên – những người đã luôn ủng hộ, yêu thương và dõi theo chúng con trong suốt hành trình này. Xin tri ân những người bạn, đồng nghiệp thân yêu – những người đã luôn "đẩy thuyền", ủng hộ và giúp hai đứa can đảm bước lên một con thuyền thật sự, cùng nhau hướng về tương lai.
 Tiệc cưới sắp tới chính là dịp để hai đứa gửi lời cảm ơn sâu sắc đến tất cả những người thân yêu đã góp mặt trong hành trình tuyệt vời này. Hy vọng sẽ nhận được những lời chúc phúc chân thành và sự hiện diện đông đủ của mọi người.
 `,
     },
