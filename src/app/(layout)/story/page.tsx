@@ -34,7 +34,7 @@ export default function Story() {
     {
       title: "Chúng mình đã đi cùng nhau như thế",
       date: "July 7 2023",
-      image: "/story/7_7_2023.png",
+      image: "/story/f7_7_2023.png",
       description:
         'Anh đưa em đi dạo khắp nơi, kể em nghe đủ chuyện trên đời. Rồi trước cửa nhà, anh nhẹ nhàng ôm em và bày tỏ tình cảm. Em lúc ấy đã thích anh rất nhiều, nhưng vẫn cố "làm giá", bắt anh chờ đến ngày hôm sau mới gật đầu. Hai đứa bước vào mối quan hệ mới với những trái tim từng nhiều vết xước. Mình chưa chắc điều gì ở tương lai, chỉ biết rằng: đối phương là người đáng để trân trọng và yêu thương.',
     },
@@ -48,7 +48,7 @@ export default function Story() {
     {
       title: "Chúng mình đã đi cùng nhau như thế",
       date: "November 2023",
-      image: "/story/t11_2023.jpg",
+      image: "/story/ft11_2023.jpg",
       description:
         "Anh từng nói, anh mong có một chuyến đi xa, nơi chỉ có hai đứa mình. Và Phú Quốc – nơi nên thơ, lặng lẽ – đã trở thành nơi chúng mình trao nhau lời hẹn thề, rằng sẽ cùng nhau đi suốt cuộc đời.",
     },
@@ -62,14 +62,14 @@ export default function Story() {
     {
       title: "Chúng mình đã đi cùng nhau như thế",
       date: "July 2024",
-      image: "/story/t7_2024.png",
+      image: "/story/ft7_2024.png",
       description:
         "Anh dành tặng em chuyến đi Sapa nhân dịp sinh nhật. Thời điểm ấy là lúc em gặp nhiều khó khăn nhất, đứng trước những thay đổi lớn về công việc và định hướng tương lai. Anh vẫn luôn bên em – lắng nghe, thấu hiểu, tiếp thêm sức mạnh. Một chàng trai dịu dàng, kiên nhẫn nắm tay em qua mọi thử thách.",
     },
     {
       title: "Chúng mình đã đi cùng nhau như thế",
       date: "February 2025",
-      image: "/story/t2_2025.jpg",
+      image: "/story/ft2_2025.jpg",
       description:
         "Chúng mình cùng về thưa chuyện với bố mẹ hai bên, xin phép được tiến tới hôn nhân. Mọi người đều đã xem nhau như người thân từ rất lâu, nên khi hai đứa thông báo, ai cũng vui vẻ đồng thuận. Từ đó, cả hai gia đình cùng bắt tay vào chuẩn bị cho ngày trọng đại của chúng mình – từng hạng mục đều chất chứa yêu thương và kỳ vọng.",
     },
