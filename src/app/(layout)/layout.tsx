@@ -44,7 +44,7 @@ export default function RootLayout({
 
   return (
     <>
-      <header className="sticky top-0 z-10 flex h-16 bg-[#faf0e6]">
+      <header className="sticky top-0 z-20 flex h-16 bg-[#faf0e6]">
         <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
           <div className="flex flex-1 items-center gap-x-6">
             <button
