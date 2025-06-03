@@ -1,41 +1,98 @@
-import Image from "next/image";
+import React, { useEffect, useRef, useState } from "react";
+import styles from "./index.module.css";
+import { XMarkIcon } from "@heroicons/react/24/outline";
 
 interface Props {
-  imageUrls: string[];
-  selectedImageUrls?: string;
-  setSelectedImageUrls: React.Dispatch<React.SetStateAction<string>>;
+  images: string[];
+  selected: string;
+  setSelected: React.Dispatch<React.SetStateAction<string>>;
 }
 
-export const ImageViewer = ({
-  imageUrls,
-  selectedImageUrls,
-  setSelectedImageUrls,
-}: Props) => {
+export const ImageViewer = ({ images, selected, setSelected }: Props) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const thumbnailRef = useRef<HTMLDivElement>(null);
 
-  console.log(imageUrls)
+  const nextImage = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
+  const prevImage = () => {
+    setCurrentIndex(
+      (prevIndex) => (prevIndex - 1 + images.length) % images.length
+    );
+  };
 
-  return selectedImageUrls ? (
-    <div
-      className="fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-80 z-[9999]"
-      onClick={() => setSelectedImageUrls("")}
-    >
-      <div className="relative h-4/5">
-        <Image
-          src={selectedImageUrls}
-          alt=""
-          layout="fill"
-          className="object-contain select-none"
+  useEffect(() => {
+    const selectedThumb = document.getElementById(`thumbnail_${currentIndex}`);
+    console.log(selectedThumb);
+
+    document
+      .getElementById(`thumbnail_${currentIndex}`)
+      ?.scrollIntoView({ inline: "center", behavior: "smooth" });
+  }, [currentIndex]);
+
+  const handleKeyDown = (e: KeyboardEvent) => {
+    if (e.key === "ArrowRight") {
+      nextImage();
+    }
+    if (e.key === "ArrowLeft") {
+      prevImage();
+    }
+    if (e.key === "Escape") {
+      setSelected("");
+    }
+  };
+
+  useEffect(() => {
+    if (selected) {
+      setCurrentIndex(images.indexOf(selected));
+    }
+  }, [selected]);
+
+  useEffect(() => {
+    window.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
+
+  return selected ? (
+    <div className={styles["image-viewer-wrapper"]}>
+      <div className={styles["image-viewer"]}>
+        <button onClick={prevImage} className={styles["nav-button"]}>
+          ❮
+        </button>
+        <img
+          src={images[currentIndex]}
+          alt={`Image ${currentIndex + 1}`}
+          className={styles["image"]}
         />
+        <button
+          onClick={() => setSelected("")}
+          className="absolute top-2 right-2"
+        >
+          <XMarkIcon className="w-6 hover:text-white font-bold" />
+        </button>
+        <button onClick={nextImage} className={styles["nav-button"]}>
+          ❯
+        </button>
       </div>
-      <div className="p-4">
-        <div className="relative h-40 w-auto">
-          <Image
-            src={selectedImageUrls}
-            alt=""
-            layout="fill"
-            className="object-contain !w-fit"
+      <div
+        className={`flex gap-2 mt-2 overflow-x-scroll ${styles["thumbnail-wrapper"]}`}
+        ref={thumbnailRef}
+      >
+        {images.map((image, index) => (
+          <img
+            id={`thumbnail_${index}`}
+            key={index}
+            src={image}
+            alt={`Image ${index + 1}`}
+            className={`${styles["thumbnail"]} ${
+              index === currentIndex ? "ring-white" : "ring-transparent"
+            }`}
+            onClick={() => setCurrentIndex(index)}
           />
-        </div>
+        ))}
       </div>
     </div>
   ) : null;

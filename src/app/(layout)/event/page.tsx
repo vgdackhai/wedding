@@ -1,7 +1,5 @@
 import {
-  ChevronRightIcon,
-  ClockIcon,
-  MapPinIcon,
+  MapPinIcon
 } from "@heroicons/react/24/outline";
 
 export default function Event() {

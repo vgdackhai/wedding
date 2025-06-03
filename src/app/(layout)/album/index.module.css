@@ -18,3 +18,64 @@
   position: relative;
   width: 100%;
 }
+
+.image-viewer-wrapper {
+  @apply fixed inset-0 w-full h-full z-50 overflow-hidden bg-black bg-opacity-80 p-4 flex flex-col justify-between;
+}
+
+.image-viewer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  @apply flex-grow
+}
+
+.image {
+  max-height: 80vh;
+  object-fit: contain;
+}
+
+.thumbnail-wrapper {
+}
+
+.thumbnail {
+  max-height: 100px;
+  object-fit: cover;
+  @apply cursor-pointer ring-1 hover:ring-white;
+}
+
+.nav-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #fff;
+}
+.nav-button:hover {
+  color: #ddd;
+}
+.nav-button:first-of-type {
+  left: 10px;
+}
+.nav-button:last-of-type {
+  right: 10px;
+}
+
+/* Tùy chỉnh scrollbar */
+.thumbnail-wrapper::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.thumbnail-wrapper::-webkit-scrollbar-thumb {
+  background-color: darkblue;
+  border-radius: 5px;
+}
+
+.thumbnail-wrapper::-webkit-scrollbar-track {
+  background-color: #eee;
+}

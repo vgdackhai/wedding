@@ -2,11 +2,10 @@
 
 import { useState } from "react";
 import styles from "./index.module.css"; // Assuming you have a CSS module for styles
+import { ImageViewer } from "./ImageViewer";
 
 export default function Album() {
-  const [_selected, setSelected] = useState("");
-
-  console.log(_selected);
+  const [selected, setSelected] = useState("");
 
   // Add all your image URLs here
   const files = [
@@ -77,6 +76,12 @@ export default function Album() {
           />
         </div>
       ))}
+
+      <ImageViewer
+        images={files}
+        selected={selected}
+        setSelected={setSelected}
+      />
     </div>
   );
 }
