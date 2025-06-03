@@ -15,7 +15,7 @@ export default function AcceptJoin() {
     phone: "",
     will_join: true, // Default to true
     guest_of: [] as string[], // Array to hold guest of names
-    number_of_guests: 0,
+    number_of_guests: 1,
   });
 
   const handleChange = (
@@ -218,6 +218,7 @@ export default function AcceptJoin() {
                     handleChange("number_of_guests", e.target.value)
                   }
                   type="number"
+                  min={1}
                   className="py-2 px-3 text-center border border-transparent focus:border-indigo-400 focus:outline-none w-full"
                 />
               </div>
