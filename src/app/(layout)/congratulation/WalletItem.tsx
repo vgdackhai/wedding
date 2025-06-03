@@ -6,14 +6,12 @@ interface Props {
   bank: string;
   name: string;
   bankNumber: string;
-  bankBranch: string;
   className?: string;
   titleClassName?: string;
 }
 
 export const WalletItem = ({
   bank,
-  bankBranch,
   bankNumber,
   name,
   qr,
@@ -43,12 +41,8 @@ export const WalletItem = ({
           <span className="font-semibold"> {name}</span>
         </div>
         <div>
-          <span>Số tài khảo:</span>
+          <span>Số tài khoản:</span>
           <span className="font-semibold"> {bankNumber}</span>
-        </div>
-        <div>
-          <span>Chi nhánh:</span>
-          <span className="font-semibold"> {bankBranch}</span>
         </div>
       </div>
     </div>
