@@ -1,8 +1,6 @@
 import { HeartIcon } from "@heroicons/react/24/outline";
-import Image from "next/image";
 
 interface Props {
-  title: string;
   date: string;
   image: string;
   description: string;
@@ -13,7 +11,6 @@ export const StoryItem = ({
   date,
   description,
   image,
-  title,
   arrow = "left",
 }: Props) => {
   return (
@@ -22,15 +19,15 @@ export const StoryItem = ({
         arrow === "left" ? "animate-fade-left" : "animate-fade-right"
       }`}
     >
-      <div className="mt-0">{title}</div>
-
       <div className="py-2 px-4 bg-[#07abae] w-fit rounded-sm text-white">
         {date}
       </div>
 
-      <div className="w-80 aspect-square overflow-hidden relative">
-        <Image alt="" src={image} fill={true} className="object-cover" />
-      </div>
+      <img
+        alt=""
+        src={image}
+        className="object-cover w-80 aspect-square object-center"
+      />
 
       <div>{description}</div>
 
