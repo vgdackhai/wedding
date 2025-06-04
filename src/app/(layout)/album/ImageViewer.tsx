@@ -1,6 +1,7 @@
+import { XMarkIcon } from "@heroicons/react/24/outline";
+import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 import styles from "./index.module.css";
-import { XMarkIcon } from "@heroicons/react/24/outline";
 
 interface Props {
   images: string[];
@@ -65,12 +66,13 @@ export const ImageViewer = ({
         <button onClick={prevImage} className={styles["nav-button"]}>
           ❮
         </button>
-        <img
+        <Image
           src={
             transform ? transform(images[currentIndex]) : images[currentIndex]
           }
           alt={`Image ${currentIndex + 1}`}
           className={styles["image"]}
+          fill
         />
         <button
           onClick={() => setSelected("")}
