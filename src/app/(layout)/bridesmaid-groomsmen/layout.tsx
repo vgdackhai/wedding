@@ -9,7 +9,7 @@ export default function Layout({ children }: Props) {
   return (
     <PageWrapper
       title="Phù Dâu & Phù Rể"
-      bgImg="/cover/phu.jpg"
+      bgImg="/cover/fphu.jpg"
       bgPosition="bottom"
     >
       {children}

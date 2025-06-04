@@ -6,5 +6,5 @@ interface Props {
 }
 
 export default function Layout({ children }: Props) {
-  return <PageWrapper title="Album Hình Cưới">{children}</PageWrapper>;
+  return <PageWrapper title="Album Hình Cưới" bgImg="/cover/album.jpg">{children}</PageWrapper>;
 }
