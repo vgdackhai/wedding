@@ -66,7 +66,7 @@ export default function Story() {
     {
       date: "Now and Forever",
       image: "/story/now.jpg",
-      description: `Chúng con xin chân thành cảm ơn bố mẹ hai bên – những người đã luôn ủng hộ, yêu thương và dõi theo chúng con trong suốt hành trình này. Xin tri ân những người bạn, đồng nghiệp thân yêu – những người đã luôn "đẩy thuyền", ủng hộ và giúp hai đứa can đảm bước lên một con thuyền thật sự, cùng nhau hướng về tương lai.
+      description: `Chúng con xin chân thành cảm ơn bố mẹ và gia đình hai bên – những người đã luôn ủng hộ, yêu thương và dõi theo chúng con trong suốt hành trình này. Xin tri ân những người bạn, đồng nghiệp thân yêu – những người đã luôn "đẩy thuyền", ủng hộ và giúp hai đứa can đảm bước lên một con thuyền thật sự, cùng nhau hướng về tương lai.
 Tiệc cưới sắp tới chính là dịp để hai đứa gửi lời cảm ơn sâu sắc đến tất cả những người thân yêu đã góp mặt trong hành trình tuyệt vời này. Hy vọng sẽ nhận được những lời chúc phúc chân thành và sự hiện diện đông đủ của mọi người.
 `,
     },

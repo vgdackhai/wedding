@@ -11,7 +11,7 @@ export default function Event() {
         </div>
         <a
           target="_blank"
-          href="https://maps.app.goo.gl/8nZ4UQgT68hWDGEX6"
+          href="https://maps.app.goo.gl/jMfQZfPuUkpDwiHYA?g_st=com.google.maps.preview.copy"
           className="flex items-center justify-center text-indigo-500 hover:text-indigo-700 hover:underline"
         >
           <div>

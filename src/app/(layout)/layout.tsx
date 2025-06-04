@@ -44,7 +44,7 @@ export default function RootLayout({
 
   return (
     <>
-      <header className="sticky top-0 z-20 flex h-16 bg-[#faf0e6]">
+      <header className="sticky top-0 z-10 flex h-16 bg-[#faf0e6]">
         <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
           <div className="flex flex-1 items-center gap-x-6">
             <button
@@ -107,16 +107,8 @@ export default function RootLayout({
       </header>
 
       <main className="h-[calc(100vh-64px)] relative overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          {/* <Image
-                  src={"/home.jpg"}
-                  alt="home-image"
-                  className="object-cover"
-                  fill={true}
-                /> */}
-        </div>
         <Snowflake />
-        <div className="z-10 h-full relative overflow-y-auto">{children}</div>
+        <div className="h-full relative overflow-y-auto">{children}</div>
       </main>
     </>
   );
