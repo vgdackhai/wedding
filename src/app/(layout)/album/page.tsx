@@ -81,6 +81,7 @@ export default function Album() {
         images={files}
         selected={selected}
         setSelected={setSelected}
+        transform={(url) => url.replace("/thumbnails/", "/albums/")}
       />
     </div>
   );

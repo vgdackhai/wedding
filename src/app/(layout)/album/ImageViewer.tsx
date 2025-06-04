@@ -6,9 +6,15 @@ interface Props {
   images: string[];
   selected: string;
   setSelected: React.Dispatch<React.SetStateAction<string>>;
+  transform?: (url: string) => string;
 }
 
-export const ImageViewer = ({ images, selected, setSelected }: Props) => {
+export const ImageViewer = ({
+  images,
+  selected,
+  setSelected,
+  transform,
+}: Props) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const thumbnailRef = useRef<HTMLDivElement>(null);
 
@@ -22,9 +28,6 @@ export const ImageViewer = ({ images, selected, setSelected }: Props) => {
   };
 
   useEffect(() => {
-    const selectedThumb = document.getElementById(`thumbnail_${currentIndex}`);
-    console.log(selectedThumb);
-
     document
       .getElementById(`thumbnail_${currentIndex}`)
       ?.scrollIntoView({ inline: "center", behavior: "smooth" });
@@ -63,7 +66,9 @@ export const ImageViewer = ({ images, selected, setSelected }: Props) => {
           ❮
         </button>
         <img
-          src={images[currentIndex]}
+          src={
+            transform ? transform(images[currentIndex]) : images[currentIndex]
+          }
           alt={`Image ${currentIndex + 1}`}
           className={styles["image"]}
         />
