@@ -21,7 +21,6 @@ export default function RootLayout({
     { name: "Home", href: "/", current: false },
     { name: "Cặp đôi", href: "/couple", current: false },
     { name: "Chuyện tình yêu", href: "/story", current: false },
-    { name: "Phù dâu & phù rể", href: "/bridesmaid-groomsmen", current: false },
     { name: "Album hình cưới", href: "/album", current: false },
     { name: "Sự kiện cưới", href: "/event", current: false },
     { name: "Video cưới", href: "/video", current: false },
