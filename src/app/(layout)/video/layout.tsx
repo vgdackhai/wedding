@@ -6,5 +6,5 @@ interface Props {
 }
 
 export default function Layout({ children }: Props) {
-  return <PageWrapper title="Xem video của chúng tôi">{children}</PageWrapper>;
+  return <PageWrapper title="Hướng dẫn gửi xe">{children}</PageWrapper>;
 }
