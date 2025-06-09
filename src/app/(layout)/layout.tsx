@@ -23,7 +23,7 @@ export default function RootLayout({
     { name: "Chuyện tình yêu", href: "/story", current: false },
     { name: "Album hình cưới", href: "/album", current: false },
     { name: "Sự kiện cưới", href: "/event", current: false },
-    { name: "Video cưới", href: "/video", current: false },
+    { name: "Video", href: "/video", current: false },
     { name: "Sổ lưu bút", href: "/wedding-guest-book", current: false },
     { name: "Mừng cưới", href: "/congratulation", current: false },
   ]);

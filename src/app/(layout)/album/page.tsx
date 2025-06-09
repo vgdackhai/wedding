@@ -72,7 +72,6 @@ export default function Album() {
             alt={file}
             className="w-full object-cover transition-transform duration-200 group-hover:scale-105 cursor-pointer"
             onClick={() => setSelected(file)}
-            loading="lazy"
           />
         </div>
       ))}

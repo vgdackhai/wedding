@@ -27,7 +27,7 @@ export const PageWrapper = ({
         ></div>
       ) : null}
       <div className="flex flex-col justify-center items-center animate-fade-up font-great-vibes">
-        <div className="mb-2 text-5xl border-b-2 border-[#f0394d] leading-normal text-white">
+        <div className="mb-2 text-5xl border-b-2 border-[#f0394d] leading-normal text-gray-900">
           {title}
         </div>
         <div className="text-[#f0394d] flex items-center gap-4 -mt-5 mb-4 bg-transparent px-2">
