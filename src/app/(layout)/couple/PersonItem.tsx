@@ -26,12 +26,10 @@ export const PersonItem = ({
     >
       <p>{title}</p>
       <div className="w-72 h-72 aspect-square overflow-hidden relative rounded-full">
-        <Image
+        <img
           src={image}
           className={`object-cover ${avatarClassName}`}
-          fill={true}
           alt="avatar"
-          unoptimized
         />
       </div>
       <div>{name}</div>
