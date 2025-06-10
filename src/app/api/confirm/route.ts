@@ -37,7 +37,7 @@ export async function POST(req: Request) {
             phone,
             will_join ? "Có" : "Không",
             guest_of.join(" + "),
-            +number_of_guests,
+            will_join ? +number_of_guests : 0,
           ],
         ],
       },

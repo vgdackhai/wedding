@@ -103,7 +103,6 @@ export default function AcceptJoin() {
                 <div className="text-lg text-left">Số điện thoại</div>
               </div>
               <input
-                required
                 value={formData.phone}
                 onChange={(e) => handleChange("phone", e.target.value)}
                 type="number"
