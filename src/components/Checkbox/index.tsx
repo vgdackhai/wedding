@@ -1,16 +1,21 @@
+import { DetailedHTMLProps, InputHTMLAttributes } from "react";
+
+interface Props
+  extends DetailedHTMLProps<
+    InputHTMLAttributes<HTMLInputElement>,
+    HTMLInputElement
+  > {
+  label: string;
+}
+
 export default function Checkbox({
   id,
   name,
   label,
   checked = false,
   onChange,
-}: {
-  id: string;
-  name: string;
-  label: string;
-  checked?: boolean;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-}) {
+  ...rest
+}: Props) {
   return (
     <div className="flex gap-3">
       <div className="flex h-6 shrink-0 items-center">
@@ -24,6 +29,7 @@ export default function Checkbox({
             type="checkbox"
             aria-describedby="comments-description"
             className="col-start-1 row-start-1 appearance-none rounded border border-gray-300 bg-white checked:border-indigo-600 checked:bg-indigo-600 indeterminate:border-indigo-600 indeterminate:bg-indigo-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:border-gray-300 disabled:bg-gray-100 disabled:checked:bg-gray-100 forced-colors:appearance-auto"
+            {...rest}
           />
           <svg
             fill="none"
@@ -48,7 +54,7 @@ export default function Checkbox({
         </div>
       </div>
       <div className="text-sm/6">
-        <label htmlFor="comments" className="text-gray-900">
+        <label htmlFor={id} className="text-gray-900">
           {label}
         </label>
       </div>

@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import styles from "./index.module.css"; // Assuming you have a CSS module for styles
 import { ImageViewer } from "./ImageViewer";
+import styles from "./index.module.css"; // Assuming you have a CSS module for styles
 
 export default function Album() {
   const [selected, setSelected] = useState("");

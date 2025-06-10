@@ -1,10 +1,11 @@
 "use client";
 
 import Checkbox from "@/components/Checkbox";
+import { HeartIcon } from "@heroicons/react/24/outline";
 import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 
 export default function AcceptJoin() {
   const [loading, setLoading] = useState(false);
@@ -25,10 +26,10 @@ export default function AcceptJoin() {
     setFormData({ ...formData, [key]: value });
   };
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (event: FormEvent) => {
     try {
-      console.log("Submitting form data:", formData);
       setLoading(true);
+      event.preventDefault();
       await axios.post("/api/confirm", formData);
       setConfirmed(true);
     } catch (error) {
@@ -66,7 +67,10 @@ export default function AcceptJoin() {
           </div>
         </div>
       </div>
-      <form className="max-w-2xl mx-auto flex flex-col items-center justify-center p-10 gap-4">
+      <form
+        className="max-w-2xl mx-auto flex flex-col items-center justify-center p-10 gap-4"
+        onSubmit={handleSubmit}
+      >
         {isConfirmed ? (
           <div className="text-center">
             <h2 className="text-2xl font-bold mb-4">Cảm ơn bạn đã xác nhận!</h2>
@@ -99,6 +103,7 @@ export default function AcceptJoin() {
                 <div className="text-lg text-left">Số điện thoại</div>
               </div>
               <input
+                required
                 value={formData.phone}
                 onChange={(e) => handleChange("phone", e.target.value)}
                 type="number"
@@ -112,6 +117,7 @@ export default function AcceptJoin() {
               <div className="space-y-2 sm:flex sm:items-center sm:space-x-10 sm:space-y-0">
                 <div className="flex items-center">
                   <input
+                    required
                     id={"confirm_yes"}
                     name="notification-method"
                     type="radio"
@@ -130,6 +136,7 @@ export default function AcceptJoin() {
                 </div>
                 <div className="flex items-center">
                   <input
+                    required
                     id={"confirm_no"}
                     name="notification-method"
                     type="radio"
@@ -158,6 +165,7 @@ export default function AcceptJoin() {
               <div className="space-y-2 sm:flex sm:items-center sm:space-x-10 sm:space-y-0">
                 <div className="flex items-center">
                   <Checkbox
+                    required={!formData.guest_of.length}
                     id="guest_of_bride"
                     name="guest_of_bride"
                     label="Cô Dâu"
@@ -181,6 +189,7 @@ export default function AcceptJoin() {
                 </div>
                 <div className="flex items-center">
                   <Checkbox
+                    required={!formData.guest_of.length}
                     id="guest_of_grooms"
                     name="guest_of_grooms"
                     label="Chú Rể"
@@ -213,6 +222,7 @@ export default function AcceptJoin() {
                   </div>
                 </div>
                 <input
+                  required
                   value={formData.number_of_guests}
                   onChange={(e) =>
                     handleChange("number_of_guests", e.target.value)
@@ -226,18 +236,31 @@ export default function AcceptJoin() {
 
             <button
               type="submit"
-              className="cursor-pointer w-full rounded-md bg-[#f0394d] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#f0394d] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f0394d]"
-              onClick={handleSubmit}
+              className="flex items-center justify-center cursor-pointer w-full rounded-md bg-[#f0394d] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#f0394d] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#f0394d]"
+              // onClick={handleSubmit}
               disabled={loading || isConfirmed}
             >
               <div className="space-y-1 font-jura">
-                {isConfirmed ? (
-                  <>
-                    <div className="text-xl">Cảm ơn bạn đã nhận lời mời</div>
-                    <div>Find your invitation</div>
-                  </>
+                {loading ? (
+                  <div className="block">
+                    <HeartIcon
+                      fill="white"
+                      className="text-[#f0394d] animate-ping w-6 h-6"
+                    />
+                  </div>
                 ) : (
-                  <div className="text-xl">Xác nhận tham gia</div>
+                  <>
+                    {isConfirmed ? (
+                      <>
+                        <div className="text-xl">
+                          Cảm ơn bạn đã nhận lời mời
+                        </div>
+                        <div>Find your invitation</div>
+                      </>
+                    ) : (
+                      <div className="text-xl">Xác nhận tham gia</div>
+                    )}
+                  </>
                 )}
               </div>
             </button>
